@@ -77,6 +77,10 @@ parts/
 sdist/
 var/
 wheels/
+
+#slack Data
+anonymized/
+
 *.egg-info/
 .installed.cfg
 *.egg
