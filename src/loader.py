@@ -34,7 +34,7 @@ class SlackDataLoader:
         '''
         self.path = path
         self.channels = self.get_channels()
-        self.users = self.get_ussers()
+        self.users = self.get_users()
     
 
     def get_users(self):
@@ -60,6 +60,21 @@ class SlackDataLoader:
         write a function to get all the messages from a channel
         
         '''
+        messages = []
+
+        # Construct the path to the channel's directory
+        channel_path = os.path.join(self.path, channel_name)
+        for file_name in os.listdir(channel_path):
+            if file_name.endswith(".json"):
+                file_path = os.path.join(channel_path, file_name)
+                with open(file_path, 'r') as f:
+                    data = json.load(f)
+
+                    channel_messages = data.get('messages', [])
+
+                    messages.extend(channel_messages)
+
+        return messages
 
     # 
     def get_user_map(self):
@@ -78,7 +93,5 @@ class SlackDataLoader:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Export Slack history')
-
-    
     parser.add_argument('--zip', help="Name of a zip file to import")
     args = parser.parse_args()
