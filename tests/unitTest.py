@@ -25,5 +25,6 @@ class TestSlackDataLoader(unittest.TestCase):
 
     # Add more tests as needed for other methods in SlackDataLoader
 
+
 if __name__ == '__main__':
     unittest.main()
