@@ -155,7 +155,7 @@ class SlackDataLoader:
             
             return dfall
 
-    def parse_slack_reaction(path, channel):
+    def parse_slack_reaction(self, path, channel):
         """get reactions"""
         dfall_reaction = pd.DataFrame()
         combined = []
@@ -183,7 +183,7 @@ class SlackDataLoader:
         df_reaction['channel'] = channel
         return df_reaction
 
-    def get_community_participation(path):
+    def get_community_participation(self, path):
         """ specify path to get json files"""
         combined = []
         comm_dict = {}
