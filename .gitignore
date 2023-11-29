@@ -79,7 +79,7 @@ var/
 wheels/
 
 #slack Data
-anonymized/
+data/
 
 *.egg-info/
 .installed.cfg
