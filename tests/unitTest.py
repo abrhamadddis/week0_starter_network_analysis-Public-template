@@ -1,6 +1,6 @@
 import unittest
 import os
-from ..src.loader import SlackDataLoader
+from ../src.loader import SlackDataLoader
 
 class TestSlackDataLoader(unittest.TestCase):
 
